@@ -1,7 +1,23 @@
-class Game:
-    def guess(self, guess_number):
-        self._assert_illegal_value(guess_number)
+from game_result import GameResult
 
+class Game:
+    def __init__(self):
+        self._question = ""  # Placeholder for the actual question logic
+
+    @property
+    def question(self):
+        raise AttributeError("question 속성은 읽기 전용입니다.")
+    
+    @question.setter
+    def question(self, value):
+        self._question = value
+
+    def guess(self, guess_number) -> GameResult:
+        self._assert_illegal_value(guess_number)
+        if guess_number == self._question:
+            return GameResult(True, 3, 0)  # Placeholder for actual game result logic
+        return None
+      # Placeholder for actual game result logic
     def _assert_illegal_value(self, guessNumber):
         if guessNumber is None:
             raise TypeError("입력이 None입니다.")
