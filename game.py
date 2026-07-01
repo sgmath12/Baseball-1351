@@ -16,7 +16,7 @@ class Game:
         self._assert_illegal_value(guess_number)
         if guess_number == self._question:
             return GameResult(True, 3, 0)  # Placeholder for actual game result logic
-        return None
+        return GameResult(False, 0, 0)
       # Placeholder for actual game result logic
     def _assert_illegal_value(self, guessNumber):
         if guessNumber is None:
