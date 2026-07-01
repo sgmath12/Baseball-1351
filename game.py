@@ -1,3 +1,4 @@
+
 from game_result import GameResult
 
 class Game:
@@ -34,3 +35,4 @@ class Game:
         
     def _isDuplicateNumber(self, guessNumber):
         return len(set(guessNumber)) != 3
+
